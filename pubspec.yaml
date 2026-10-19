@@ -1,0 +1,64 @@
+name: mimic
+description: "A music client that let you use diferent metadata and streaming providers,all in just one place."
+publish_to: 'none'
+version: 1.0.2
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  image_picker: ^1.1.2
+  lottie: ^3.3.1
+  palette_generator: ^0.3.3
+  provider: ^6.1.2
+  marquee: ^2.3.0
+  flutter:
+    sdk: flutter
+  http: ^1.6.0
+  just_audio: ^0.10.6
+  sqlite3: ^3.6.0
+  path_provider: ^2.0.0
+  path: ^1.9.0
+  audio_service: ^0.18.19
+  shared_preferences: ^2.5.6
+  on_audio_query_forked: ^2.9.1
+  file_picker: ^13.1.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  intl: ^0.19.0 
+  flutter_lints: ^6.0.0
+  dio: ^5.10.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.6
+
+
+flutter_launcher_icons:
+  android: true
+  image_path: "resources/mimicLogo.jpg"
+
+flutter_native_splash:
+  color: "#0xFF222735"
+  image: resources/mimicLogo.jpg
+
+  android: true
+  ios: false
+
+flutter:
+  uses-material-design: true
+  assets:
+    - resources/deathOfAnOptimist.png
+    - resources/
+  fonts:
+    - family: Adwaita
+      fonts:
+        - asset: resources/AdwaitaSans-Regular.ttf
+        - asset: resources/AdwaitaSans-Italic.ttf
+        
+    - family: Adwaitalatin
+      fonts:
+      - asset: resources/adwaita-sans-latin-300-normal.ttf
+
+        
