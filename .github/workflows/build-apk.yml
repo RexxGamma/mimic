@@ -33,11 +33,11 @@ jobs:
       - name: Build Mimic APK
         run: flutter build apk --release
 
-            - name: Publish APK as GitHub Release
+      - name: Publish APK as GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "mimic-build-${GITHUB_RUN_NUMBER}" \
-            build/app/outputs/flutter-apk/app-release.apk \
+            "build/app/outputs/flutter-apk/app-release.apk" \
             --title "Mimic build ${GITHUB_RUN_NUMBER}" \
             --notes "APK release de Mimic generado con GitHub Actions."
