@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -33,10 +33,11 @@ jobs:
       - name: Build Mimic APK
         run: flutter build apk --debug
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: Mimic-APK
-          path: build/app/outputs/flutter-apk/app-debug.apk
-          if-no-files-found: error
-          retention-days: 7
+      - name: Publish APK as GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "mimic-build-${GITHUB_RUN_NUMBER}" \
+            build/app/outputs/flutter-apk/app-debug.apk \
+            --title "Mimic build ${GITHUB_RUN_NUMBER}" \
+            --notes "APK de prueba generado con GitHub Actions."
